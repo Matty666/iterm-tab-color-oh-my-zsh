@@ -1,6 +1,6 @@
 tcConfigFilePath="$(dirname "$0")/.tc-config"
-declare -A tcConfigColors
-declare -a orderedConfig
+declare -gA tcConfigColors
+declare -ga orderedConfig
 while IFS="=" read -r configKey hexValue || [ -n "$hexValue" ]; do
   if ! ( [[ $configKey == \#* ]]); then
     orderedConfig+=( $configKey )
