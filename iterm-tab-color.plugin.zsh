@@ -13,7 +13,7 @@ function directory_tab_color() {
 }
 
 function command_tab_color() {
-  try_set_tab_color "$1"
+  try_set_tab_color "$1" || try_set_tab_color "$PWD"
 }
 
 function try_set_tab_color() {
@@ -25,6 +25,7 @@ function try_set_tab_color() {
 
     iterm_tab_color
   done
+  return 1
 }
 
 function iterm_tab_color() {
